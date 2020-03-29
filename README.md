@@ -5,6 +5,11 @@
 ## Overview
 Distributed transaction demo.
 
+XAResource list:
+- H2 In-memory
+- MySQL
+- ActiveMQ
+
 ## Test
 ```
 gradle test
