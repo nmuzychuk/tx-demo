@@ -21,7 +21,6 @@ public class DbSetupRunner implements ApplicationRunner {
         messageJdbcTemplate.execute("CREATE TABLE MESSAGES (ID INT PRIMARY KEY, BODY VARCHAR(255))");
         messageJdbcTemplate.execute("CREATE SEQUENCE MESSAGE_SEQUENCE");
 
-        auditJdbcTemplate.execute("CREATE TABLE AUDIT (ID INT PRIMARY KEY, EVENT VARCHAR(255))");
-        auditJdbcTemplate.execute("CREATE SEQUENCE AUDIT_SEQUENCE");
+        auditJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS AUDIT (ID INT PRIMARY KEY AUTO_INCREMENT, EVENT VARCHAR(255))");
     }
 }
